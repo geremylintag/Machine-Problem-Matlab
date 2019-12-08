@@ -1,0 +1,18 @@
+e = input('Enter experimental points = ');
+x = e(:,1);
+y = e(:,2); 
+%gets all x points
+%gets all y points
+for i = 1:10
+    if i < size(x,1)
+        er = y - (polyval(polyfit(x,y,i),x));
+        if (i == 1) || (a > norm(er))
+            a = norm(er);
+            b = i;
+        %best fit
+        end
+    end
+end
+pf = polyfit(x,y,b);
+fprintf('Best fit according to least-norm error vector: \n')
+disp(pf)
