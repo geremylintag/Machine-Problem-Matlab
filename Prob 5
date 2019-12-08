@@ -1,0 +1,25 @@
+na = 0:200;
+n = na.';
+xa = input('Enter X value = ');
+%value must be 3*pi/100*n
+x = sin(xa);
+for i=1:length(n)
+    if (n(i) == 0)
+        y(i) = (-1.5*x(i)) + (2*x(i+1)) - (0.5*x(i+2));
+    elseif (n(i) > 0)&&(n(i)<=198)
+        y(i) = (0.5*x(i+1)) - (0.5*x(i-1));
+    else 
+        y(i) = 1.5*x(i) - (2*x(i-1)) + (0.5*x(i-2));
+    end
+end
+%Given Peicewise equation
+grid on
+plot(n,x,'g-')
+hold on
+plot(n,y,'b-')
+hold off
+xlabel('n')
+ylabel('x & y wrt n')
+legend('X(n)','Y(n)')
+title('Plot of x and y wrt n')
+%Plotting
