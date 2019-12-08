@@ -1,0 +1,11 @@
+n = [0:99];
+for x = 1:100
+   if (n(x)<=9)
+     y(x) = (n(x).^2) - 7;
+   elseif n(x)>=10
+     y(x) = (n(x)-10).^2 - 7;
+   end
+   %Function for the piecewise equation
+end
+stem(n,y)
+%Plotting
